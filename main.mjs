@@ -10,3 +10,4 @@ list.append("snake");
 list.append("turtle");
 
 console.log(list.toString()); // ( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( snake ) -> ( turtle ) -> null
+console.log(list.size())

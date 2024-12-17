@@ -66,18 +66,17 @@ function createLinkedList () {
     if (!headNode) {
       throw new Error("List is already empty!");
     }
-    let secondToLastNode = null;
+    let currentNode = headNode;
+    while (currentNode.nextNode !== tailNode) {
+      currentNode = currentNode.nextNode;
+    }
+    let secondToLastNode = currentNode;
     if (length === 1) {
       headNode = null;
       tailNode = null;
     } else {
       tailNode = secondToLastNode;
       tailNode.nextNode = null;
-      let currentNode = headNode;
-      while (currentNode.nextNode !== tailNode) {
-        currentNode = currentNode.nextNode;
-      }
-      secondToLastNode = currentNode;
     }
     length--;
   }
