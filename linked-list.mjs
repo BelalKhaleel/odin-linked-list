@@ -188,6 +188,8 @@ function createLinkedList () {
   }
 
   const update = (value, index) => {
+    checkIndexBoundary(index);
+
     let currentNode = headNode;
 
     for (let i = 0; i < index; i++) {
