@@ -53,7 +53,6 @@ function createLinkedList () {
   const at = (index) => {
     checkIndexBoundary(index);
 
-
     let currentNode = headNode;
     while(index > 0) {
       currentNode = currentNode.nextNode;
@@ -188,6 +187,16 @@ function createLinkedList () {
     length--;
   }
 
+  const update = (value, index) => {
+    let currentNode = headNode;
+
+    for (let i = 0; i < index; i++) {
+      currentNode = currentNode.nextNode;
+    }
+
+    return currentNode ? currentNode.value = value : null;
+  }
+
   return {
     append,
     prepend,
@@ -201,6 +210,7 @@ function createLinkedList () {
     toString,
     insertAt,
     removeAt,
+    update,
   };
 }
 
